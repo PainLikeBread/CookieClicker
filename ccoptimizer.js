@@ -1,14 +1,10 @@
-Game.registerMod("MyMod", {
+Game.registerMod('ccoptimizer', {
     init: function () {
-        console.log("MyMod loaded!");
-        Game.Popup("MyMod loaded!", Game.mouseX, Game.mouseY);
+        console.log("CCOptimizer loaded!");
+        Game.Popup("CCOptimizer loaded!", Game.mouseX, Game.mouseY);
     },
 
-    save: function () {
-        return JSON.stringify({});
-    },
+    save: function () { return JSON.stringify({}); },
 
-    load: function (str) {
-        // Runs when loading a save – not needed for basic mods
-    }
+    load: function (str) {}
 });
