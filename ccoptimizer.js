@@ -22,7 +22,7 @@ Game.registerMod('ccoptimizer', {
                     let dCPS = b.storedCps || b.cps();
                     buildingROI.push({name, ROI: price/dCPS, price, dCPS});
                 }
-            let allROI = buildingROI.concat(upgradeROI);
+            let allROI = buildingROI
             allROI.sort((a,b) => a.ROI - b.ROI);
 
             let html = '<b>Next Best Purchases:</b><br>';
