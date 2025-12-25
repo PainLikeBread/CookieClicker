@@ -26,20 +26,8 @@ Game.registerMod("ROIHelper", {
                 buildingROI.push({name, ROI: price/dCPS, price, dCPS});
             }
 
-            let upgradeROI = [];
-            // Calculate ROI for upgrades
-            for (let id in Game.UpgradesById) {
-                let upg = Game.UpgradesById[id];
-                if (upg.unlocked && !upg.bought) {
-                    let price = upg.getPrice();
-                    // Rough estimate: ΔCPS caused by upgrade
-                    let dCPS = Game.cookiesPs * (upg.cpsMult || 0.1);
-                    upgradeROI.push({name: upg.name, ROI: price/dCPS, price, dCPS});
-                }
-            }
-
             // Combine buildings and upgrades
-            let allROI = buildingROI.concat(upgradeROI);
+            let allROI = buildingROI
             // Sort by ROI (lowest payback time first)
             allROI.sort((a,b) => a.ROI - b.ROI);
 
